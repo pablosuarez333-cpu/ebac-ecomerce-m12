@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Commerce | Inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Futuro CSS compilado desde SCSS -->
+    <link rel="stylesheet" href="scss/styles.css">
+</head>
+
+<body class="page page--home">
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo">
+                <h1 class="logo">TechStore</h1>
+            </div>
+
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#catalogo" class="nav__link">Productos</a></li>
+                    <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="cart">
+                <button class="cart__button" id="cartToggle">
+                    🛒
+                    <span class="cart__count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= CARRITO LATERAL ================= -->
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer__header">
+            <h2>Carrito</h2>
+            <button class="cart-drawer__close" id="cartClose">X</button>
+        </div>
+
+        <div class="cart-drawer__body" id="cartItems">
+            <p class="cart-drawer__empty">El carrito está vacío.</p>
+        </div>
+
+        <div class="cart-drawer__footer">
+            <p>Total: $<span id="cartTotal">0.00</span></p>
+            <button class="btn btn--primary">Finalizar compra</button>
+        </div>
+    </aside>
+
+    <!-- ================= HERO / CARRUSEL ================= -->
+    <section class="hero">
+        <div class="carousel" id="carousel">
+            <div class="carousel__track">
+                <div class="carousel__slide active">
+                    <img src="img/laptop 2.png" alt="Producto destacado 1">
+                </div>
+                <div class="carousel__slide">
+                    <img src="img/audifonos 4.webp" alt="Producto destacado 2">
+                </div>
+                <div class="carousel__slide">
+                    <img src="img/smartphone 2.jpg" alt="Producto destacado 3">
+                </div>
+            </div>
+
+            <button class="carousel__control carousel__control--prev" id="prevSlide">&#10094;</button>
+            <button class="carousel__control carousel__control--next" id="nextSlide">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- ================= CATALOGO ================= -->
+    <section class="catalog" id="catalogo">
+        <div class="container">
+            <h2 class="section-title">Catálogo</h2>
+
+            <div class="product-grid">
+
+                <article class="product-card" data-id="1" data-name="Laptop Pro" data-price="15000">
+                    <div class="product-card__image">
+                        <img src="img/laptop 6.jpg" alt="Laptop Pro">
+                    </div>
+                    <div class="product-card__info">
+                        <h3 class="product-card__title">Laptop Pro</h3>
+                        <p class="product-card__price">$15,000</p>
+                        <button class="btn btn--secondary add-to-cart">Agregar al carrito</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="2" data-name="Smartphone X" data-price="9000">
+                    <div class="product-card__image">
+                        <img src="img/smartphone 1.webp" alt="Smartphone X">
+                    </div>
+                    <div class="product-card__info">
+                        <h3 class="product-card__title">Smartphone X</h3>
+                        <p class="product-card__price">$9,000</p>
+                        <button class="btn btn--secondary add-to-cart">Agregar al carrito</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-id="3" data-name="Audífonos Pro" data-price="2500">
+                    <div class="product-card__image">
+                        <img src="img/audifonos 2.jpg" alt="Audífonos Pro">
+                    </div>
+                    <div class="product-card__info">
+                        <h3 class="product-card__title">Audífonos Pro</h3>
+                        <p class="product-card__price">$2,500</p>
+                        <button class="btn btn--secondary add-to-cart">Agregar al carrito</button>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTACTO ================= -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn--primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 TechStore. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT BASICO ================= -->
+    <script>
+        // ================= CARRITO =================
+        const cartToggle = document.getElementById("cartToggle");
+        const cartDrawer = document.getElementById("cartDrawer");
+        const cartClose = document.getElementById("cartClose");
+        const cartItems = document.getElementById("cartItems");
+        const cartCount = document.getElementById("cartCount");
+        const cartTotal = document.getElementById("cartTotal");
+
+        let cart = [];
+
+        cartToggle.addEventListener("click", () => {
+            cartDrawer.classList.toggle("active");
+        });
+
+        cartClose.addEventListener("click", () => {
+            cartDrawer.classList.remove("active");
+        });
+
+        document.querySelectorAll(".add-to-cart").forEach(button => {
+            button.addEventListener("click", (e) => {
+                const product = e.target.closest(".product-card");
+                const id = product.dataset.id;
+                const name = product.dataset.name;
+                const price = parseFloat(product.dataset.price);
+
+                cart.push({ id, name, price });
+                updateCart();
+            });
+        });
+
+        function updateCart() {
+            cartItems.innerHTML = "";
+            let total = 0;
+
+            cart.forEach(item => {
+                total += item.price;
+                const div = document.createElement("div");
+                div.classList.add("cart-item");
+                div.innerHTML = `<p>${item.name} - $${item.price}</p>`;
+                cartItems.appendChild(div);
+            });
+
+            cartCount.textContent = cart.length;
+            cartTotal.textContent = total.toFixed(2);
+        }
+
+        // ================= CARRUSEL =================
+        const slides = document.querySelectorAll(".carousel__slide");
+        const next = document.getElementById("nextSlide");
+        const prev = document.getElementById("prevSlide");
+
+        let current = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            slides[index].classList.add("active");
+        }
+
+        next.addEventListener("click", () => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        });
+
+        prev.addEventListener("click", () => {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        });
+    </script>
+
+</body>
+</html>
