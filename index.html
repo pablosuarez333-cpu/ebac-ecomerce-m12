@@ -52,24 +52,59 @@
     </aside>
 
     <!-- ================= HERO / CARRUSEL ================= -->
-    <section class="hero">
-        <div class="carousel" id="carousel">
-            <div class="carousel__track">
-                <div class="carousel__slide active">
-                    <img src="img/laptop 2.png" alt="Producto destacado 1">
-                </div>
-                <div class="carousel__slide">
-                    <img src="img/audifonos 4.webp" alt="Producto destacado 2">
-                </div>
-                <div class="carousel__slide">
-                    <img src="img/smartphone 2.jpg" alt="Producto destacado 3">
-                </div>
+   <section class="hero" style="display:flex; justify-content:center; align-items:center; padding:2rem 0;">
+    
+    <div class="carousel" id="carousel" 
+         style="position:relative; width:90%; max-width:1000px; max-height:50vh; overflow:hidden;">
+
+        <div class="carousel__track">
+
+            <div class="carousel__slide active" style="height:50vh;">
+                <img src="img/laptop 3.webp" 
+                     alt="Producto destacado 1"
+                     style="width:100%; height:100%; object-fit:cover;">
             </div>
 
-            <button class="carousel__control carousel__control--prev" id="prevSlide">&#10094;</button>
-            <button class="carousel__control carousel__control--next" id="nextSlide">&#10095;</button>
+            <div class="carousel__slide" style="height:50vh;">
+                <img src="img/laptop 6.jpg" 
+                     alt="Producto destacado 2"
+                     style="width:100%; height:100%; object-fit:cover;">
+            </div>
+
+            <div class="carousel__slide" style="height:50vh;">
+                <img src="img/laptop 2.png" 
+                     alt="Producto destacado 3"
+                     style="width:100%; height:100%; object-fit:cover;">
+            </div>
+
+            <div class="carousel__slide" style="height:50vh;">
+                <img src="img/laptop 4.jpg" 
+                     alt="Producto destacado 4"
+                     style="width:100%; height:100%; object-fit:cover;">
+            </div>
+
+            <div class="carousel__slide" style="height:50vh;">
+                <img src="assets/img/slide5.jpg" 
+                     alt="Producto destacado 5"
+                     style="width:100%; height:100%; object-fit:cover;">
+            </div>
+
         </div>
-    </section>
+
+        <button class="carousel__control carousel__control--prev" id="prevSlide"
+                style="position:absolute; top:50%; left:10px; transform:translateY(-50%);
+                       background:rgba(0,0,0,0.5); color:white; border:none; padding:0.5rem; cursor:pointer;">
+            &#10094;
+        </button>
+
+        <button class="carousel__control carousel__control--next" id="nextSlide"
+                style="position:absolute; top:50%; right:10px; transform:translateY(-50%);
+                       background:rgba(0,0,0,0.5); color:white; border:none; padding:0.5rem; cursor:pointer;">
+            &#10095;
+        </button>
+
+    </div>
+</section>
 
     <!-- ================= CATALOGO ================= -->
     <section class="catalog" id="catalogo">
