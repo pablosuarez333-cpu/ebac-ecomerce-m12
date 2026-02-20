@@ -1,0 +1,9 @@
+@use "../main/variables" as v;
+
+.footer {
+    background: v.$color-dark;
+    color: v.$color-white;
+    text-align: center;
+    padding: v.$spacing-sm;
+    margin-top: v.$spacing-lg;
+}

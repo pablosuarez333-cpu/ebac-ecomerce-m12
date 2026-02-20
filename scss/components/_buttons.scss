@@ -1,0 +1,24 @@
+@use "../main/mixins" as m;
+@use "../main/variables" as v;
+
+.btn {
+    @include m.button-base;
+
+    &--primary {
+        background: v.$color-primary;
+        color: v.$color-white;
+
+        &:hover {
+            background: v.$color-secondary;
+        }
+    }
+
+    &--secondary {
+        background: v.$color-dark;
+        color: v.$color-white;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

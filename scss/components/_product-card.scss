@@ -1,0 +1,22 @@
+@use "../main/variables" as v;
+
+.product-card {
+    background: v.$color-white;
+    border-radius: v.$radius-md;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: v.$transition;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    &__info {
+        padding: v.$spacing-sm;
+    }
+
+    &__price {
+        margin: v.$spacing-xs 0;
+        font-weight: bold;
+    }
+}

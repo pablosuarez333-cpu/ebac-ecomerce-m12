@@ -1,0 +1,13 @@
+@use "../main/variables" as v;
+
+.form-group {
+    margin-bottom: v.$spacing-sm;
+
+    input,
+    textarea {
+        width: 100%;
+        padding: v.$spacing-xs;
+        border: 1px solid v.$color-gray;
+        border-radius: v.$radius-sm;
+    }
+}

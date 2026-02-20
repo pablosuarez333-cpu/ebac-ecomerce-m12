@@ -1,0 +1,29 @@
+@use "../main/variables" as v;
+
+.cart-drawer {
+    position: fixed;
+    right: -350px;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    background: v.$color-white;
+    box-shadow: -4px 0 10px rgba(0,0,0,0.1);
+    padding: v.$spacing-sm;
+    transition: v.$transition;
+    display: flex;
+    flex-direction: column;
+
+    &.active {
+        right: 0;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: v.$spacing-sm;
+    }
+
+    &__footer {
+        margin-top: auto;
+    }
+}

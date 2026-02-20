@@ -1,0 +1,17 @@
+@use "variables" as v;
+
+body {
+    font-family: v.$font-main;
+    background: v.$color-light;
+    color: v.$color-dark;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
