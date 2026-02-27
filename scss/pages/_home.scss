@@ -1,0 +1,6 @@
+@use "../main/variables" as v;
+
+.section-title {
+    margin: v.$spacing-md 0;
+    text-align: center;
+}

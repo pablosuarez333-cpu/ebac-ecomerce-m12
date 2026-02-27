@@ -1,0 +1,24 @@
+@use "variables" as v;
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button-base {
+    padding: v.$spacing-xs v.$spacing-sm;
+    border-radius: v.$radius-sm;
+    border: none;
+    cursor: pointer;
+    transition: v.$transition;
+}
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint == tablet {
+        @media (max-width: 768px) { @content; }
+    }
+    @if $breakpoint == mobile {
+        @media (max-width: 480px) { @content; }
+    }
+}

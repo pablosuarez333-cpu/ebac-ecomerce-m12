@@ -1,0 +1,16 @@
+@use "../main/mixins" as m;
+@use "../main/variables" as v;
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: v.$spacing-md;
+
+    @include m.responsive(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m.responsive(mobile) {
+        grid-template-columns: 1fr;
+    }
+}

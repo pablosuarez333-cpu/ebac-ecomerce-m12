@@ -1,0 +1,28 @@
+@use "../main/variables" as v;
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+
+    &__slide {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: v.$color-white;
+        border: none;
+        padding: v.$spacing-xs;
+        cursor: pointer;
+
+        &--prev { left: 10px; }
+        &--next { right: 10px; }
+    }
+}
